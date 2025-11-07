@@ -6,7 +6,7 @@ int load_tools(struct Tool alat[]) {
     while (fscanf(f, "%u %s %s %s %u %u",                    // Membaca 6 data dari file untuk setiap alat
         &alat[n].id, alat[n].nama, alat[n].merek,             // Membaca ID, nama, dan merek alat
         alat[n].model, &alat[n].tahun, &alat[n].stok) == 6) { // Membaca model, tahun, dan stok alat
-        n++;                                                  // Menambah jumlah alat yang berhasil dibaca
+        n++;                                                  
     }
                                                               
 
