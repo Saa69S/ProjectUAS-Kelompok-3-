@@ -18,7 +18,22 @@ void save_tools(struct Tool alat[], int n) {   // Fungsi untuk menyimpan data al
         fprintf(f, "%u %s %s %s %u %u\n",      
             alat[i].id, alat[i].nama, alat[i].merek,  
             alat[i].model, alat[i].tahun, alat[i].stok); 
-    }                                          
+    }
+    fclose(f);                           // Menutup file setelah selesai digunakan
+}
+
+int load_loans(struct Loan pinjam[]) {  // Fungsi untuk memuat data pinjaman dari file ke array
+    FILE *f = fopen("loans.txt", "r");  // Membuka file loans.txt dalam mode baca
+    if (!f) return 0;  
+    int n = 0;  
+    while (fscanf(f, "%s %u %u", pinjam[n].username, &pinjam[n].id, &pinjam[n].jumlah) == 3) {  
+        n++;                            // Menambah jumlah data yang berhasil dibaca
+    }
+    fclose(f);  
+    return n;  
+}
+
+
 
                                                              
 
