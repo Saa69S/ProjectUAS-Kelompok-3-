@@ -19,5 +19,21 @@ void menu_(char *user) {                           //Prototype fungsi menu dan t
         printf("3. Edit alat\n");
         printf("4. Hapus alat\n");
         printf("5. Logout\n");
+        printf("Pilih: ");
+        scanf("%d", &pilih);
+        getchar();                                  //Untuk menghapus \n yang terbaca di buffer setelah scanf() agar tidak mengganggu inputnya
+
+        if (pilih == 1) {                           //Menampilkan semua alat yang tersimpan di array alat
+            printf("\n%-5s %-15s %-15s %-15s %-8s %-6s\n", //Rata kiri sebesar 15 karakter agar kolomnya sejajar
+            "ID", "Nama", "Merek", "Model", "Tahun", "Jumlah");
+            printf("------------------------------------------------------\n");
+            for (int i = 0; i < n; i++) {                  //n adalah jumlah alat yang dimuat dari file (load_tools())
+                printf("%-5u %-15s %-15s %-15s %-8u %-6u\n",
+                alat[i].id, alat [i].nama, alat[i].merek, alat[i].model, alat[i].tahun, alat[i].stok);
+            }
+        } else if (pilih == 2) {                     //Untuk memasukkan data alat baru ke dalam daftar (datanya ada di simpan di file)
+            struct Tool t;                           // t menggunakan tipe data sturct untuk mencari id alat
+            printf("ID: "); scanf("%u", &t.id);
+        }
     }
 }
