@@ -24,3 +24,18 @@ void menu_user(char *user) {
                     alat[i].id, alat[i].nama, alat[i].merek,
                     alat[i].model, alat[i].tahun, alat[i].stok);
             }
+        } else if (pilih == 2) {
+            unsigned int id, jml;
+            printf("Masukkan ID alat: "); scanf("%u", &id);
+            printf("Jumlah: "); scanf("%u", &jml);
+            int idx = cari_alat(alat, n, id);
+            if (idx == -1) printf("ID tidak ditemukan.\n");
+            else if (alat[idx].stok < jml) printf("Stok tidak cukup.\n");
+            else {
+                alat[idx].stok -= jml;
+                int found = 0;
+                for (int i = 0; i < m; i++) {
+                    if (strcmp(pinjam[i].username, user) == 0 && pinjam[i].id == id) {
+                        pinjam[i].jumlah += jml;
+                        found = 1;
+                    }
