@@ -33,7 +33,16 @@ void menu_(char *user) {                           //Prototype fungsi menu dan t
             }
         } else if (pilih == 2) {                     //Untuk memasukkan data alat baru ke dalam daftar (datanya ada di simpan di file)
             struct Tool t;                           // t menggunakan tipe data sturct untuk mencari id alat
-            printf("ID: "); scanf("%u", &t.id);
+            printf("ID: "); 
+            scanf("%u", &t.id);                      //Menggunakan & untuk alamatnya karena merujuk ke bilangan
+            printf("Nama: ");
+            scanf("%s", t.nama);
+            printf("Merek: ");
+            scanf("%s", t.merek);
+            printf("Model: ");
+            scanf("%s", t.model);
+            printf("Tahun: ");
+            scanf("%u", &t.tahun);                   //Menggunakan & untuk alamatnya karena merujuk ke bilangan
         }
     }
 }
