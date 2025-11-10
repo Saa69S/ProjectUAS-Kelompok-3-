@@ -39,3 +39,13 @@ void menu_user(char *user) {
                         pinjam[i].jumlah += jml;
                         found = 1;
                     }
+                }
+                if (!found) {
+                    strcpy(pinjam[m].username, user);
+                    pinjam[m].id = id;
+                    pinjam[m].jumlah = jml;
+                    m++;
+                }
+                save_tools(alat, n);
+                save_loans(pinjam, m);
+                printf("Berhasil meminjam alat!\n");
