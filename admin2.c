@@ -29,3 +29,10 @@
                 save_tools(alat, n);
                 printf("Alat berhasil dihapus!\n");
             }
+        } else if (pilih == 5) {
+            printf("Logout berhasil!\n");
+        } else {
+            printf("Pilihan salah!\n");
+        }
+    } while (pilih != 5);
+}
