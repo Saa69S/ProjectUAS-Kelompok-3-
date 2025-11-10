@@ -17,15 +17,22 @@
                 printf("Data alat berhasil diupdate!\n");
             }
         } else if (pilih == 4) {
-            unsigned int id;
+            unsigned int id; //unsigned = tidak boleh negatif, maka id pelaggan tidak boleh negatif.
             printf("Masukkan ID alat yang mau dihapus: ");
             scanf("%u", &id);
-            int idx = cari_alat(alat, n, id);
-            if (idx == -1) {
+            int idx = cari_alat(alat, n, id); //memanggil fungsi cari alat dengan parameter alat, n, id
+            if (idx == -1) { //jika idx = -1 maka id tidak ditemukan
                 printf("ID tidak ditemukan.\n");
-            } else {
+            } else { //jika idx tidak -1 maka id ditemukan
                 for (int i = idx; i < n - 1; i++) alat[i] = alat[i + 1];
                 n--;
                 save_tools(alat, n);
                 printf("Alat berhasil dihapus!\n");
             }
+        } else if (pilih == 5) { //jika pilih = 5 maka logout berhasil
+            printf("Logout berhasil!\n");
+        } else { //jika pilih tidak sesuai dengan pilihan yang ada
+            printf("Pilihan salah!\n");
+        }
+    } while (pilih != 5); //jika pilih tidak sama dengan 5 maka akan mengulang kembali
+}
