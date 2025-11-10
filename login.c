@@ -34,5 +34,10 @@ int login (char *user, char *pass, char *role) {
     struct Akun login;  /*mengaliaskan struct Akun menjadi login*/
     while(fscanf(file, "%s %s %s", login.username, login.pass, login.role) == 3) {  /*mengecek jika username dan pass cocok dengan inputan*/
         if (strcmp(login.username, user) == 0 && strcmp(login.pass, pass) == 0)  /*jika kondisi awal terpenuhi, maka atur ke role*/
+            strcpy(role, login.role);  /*menyalin peran dari login*/
+            fclose(file);  /*tutup file*/
+            return 1;
     }
+    fclose(file);
+    return 0;
 }
