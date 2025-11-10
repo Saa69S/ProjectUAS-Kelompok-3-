@@ -33,6 +33,15 @@ int load_loans(struct Loan pinjam[]) {  // Fungsi untuk memuat data pinjaman dar
     return n;  
 }
 
+void save_loans(struct Loan pinjam[], int n) {             
+    FILE *f = fopen("loans.txt", "w");                     // Membuka file "loans.txt" dalam mode tulis (write)
+    for (int i = 0; i < n; i++) {                          
+        fprintf(f, "%s %u %u\n", pinjam[i].username, pinjam[i].id, pinjam[i].jumlah); 
+    }
+    fclose(f);                                             // Menutup file setelah selesai menulis
+}
+
+
 
 
                                                              
