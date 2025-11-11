@@ -59,3 +59,18 @@ void menu_user(char *user) {
                     ada = 1;
                 }
             }
+            if (!ada) printf("Belum ada pinjaman.\n");
+        } else if (pilih == 4) {
+            unsigned int id, jml;
+            printf("Masukkan ID alat yang dikembalikan: "); scanf("%u", &id);
+            int ada = 0;
+            for (int i = 0; i<m; i++) {
+                if (strcmp(pinjam[i].username, user) == 0 && pinjam[i].id == id) {
+                    ada = 1;
+                    printf("Jumlah dikembalikan (max %u): ", pinjam[i].jumlah);
+                    scanf("%u", &jml);
+                    if (jml > pinjam[i].jumlah) jml = pinjam[i].jumlah;
+                    pinjam[i].jumlah -= jml;
+                }
+            }
+        }
