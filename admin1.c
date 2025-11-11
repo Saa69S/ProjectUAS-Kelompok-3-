@@ -43,6 +43,11 @@ void menu_(char *user) {                           //Prototype fungsi menu dan t
             scanf("%s", t.model);
             printf("Tahun: ");
             scanf("%u", &t.tahun);                   //Menggunakan & untuk alamatnya karena merujuk ke bilangan
+            printf("Jumlah: ");
+            scanf("%u", &t.stok);                    //%u digunakan untuk menampilkan atau membaca bilangan bulat unsigned integer (hanya bilangan positif)
+            alat[n++] = t;
+            save_tools(alat, n);                     //Untuk menyimpan semua data alat yang ada di array alat[] ke dalam file lain agar tetap tersimpan walaupun program ditutup
+            printf("Alat berhasil ditambah!\n");
         }
     }
 }
