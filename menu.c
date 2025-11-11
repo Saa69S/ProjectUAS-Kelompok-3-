@@ -49,3 +49,13 @@ void menu_user(char *user) {
                 save_tools(alat, n);
                 save_loans(pinjam, m);
                 printf("Berhasil meminjam alat!\n");
+            }
+        } else if (pilih == 3) {
+            printf("Daftar pinjaman kamu:\n");
+            int ada = 0;
+            for (int i = 0; i < m; i++) {
+                if (strcmp(pinjam[i].username, user) == 0) {
+                    printf("ID: %u | Jumlah: %u\n", pinjam[i].id, pinjam[i].jumlah);
+                    ada = 1;
+                }
+            }
