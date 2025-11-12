@@ -104,3 +104,9 @@ int main(int argc, char *argv[]) {
         printf("Login gagal!\n");
         return 0;
     }
+    
+    if (strcmp(role, "admin") == 0) menu_admin(argv[1]);
+    else menu_user(argv[1]);
+
+    return 0;
+}
