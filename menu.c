@@ -84,3 +84,23 @@ void menu_user(char *user) {
                 }
             }if (!ada) printf("Kamu tidak meminjam alat itu.\n");
         }
+        else if (pilih == 5) {
+            printf("Logout berhasil!\n");
+        } else {
+            printf("Pilihan salah!\n");
+        }
+    } while (pilih != 5);
+}
+
+/* ===== MAIN ===== */
+int main(int argc, char *argv[]) {
+    if (argc < 3) {
+        printf("Usage: %s <username> <password>\n", argv[0]);
+        return 0;
+    }
+
+    char role[10];
+    if (!login(argv[1], argv[2], role)) {
+        printf("Login gagal!\n");
+        return 0;
+    }
