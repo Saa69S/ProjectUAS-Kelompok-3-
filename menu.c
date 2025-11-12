@@ -71,6 +71,16 @@ void menu_user(char *user) {
                     scanf("%u", &jml);
                     if (jml > pinjam[i].jumlah) jml = pinjam[i].jumlah;
                     pinjam[i].jumlah -= jml;
+                    int idx = cari_alat(alat, n, id);
+                    if (idx != -1) alat[idx].stok += jml;
+                    if (pinjam[i].jumlah == 0) {
+                        for (int j = i; j < m - 1; j++) pinjam[j] = pinjam[j + i];
+                        m--;
+                    }
+                    save_tools(alat, n);
+                    save_loans(pinjam, m);
+                    printf("Alat berhasil dikembalikan!\n");
+                    break;
                 }
-            }
+            }if (!ada) printf("Kamu tidak meminjam alat itu.\n");
         }
