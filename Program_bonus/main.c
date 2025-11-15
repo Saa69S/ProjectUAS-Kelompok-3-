@@ -19,3 +19,24 @@ int main(){
         fprintf(fout, "%s", title);
     } else {
         printf("File lirik kosong.\n");
+        fclose(fin); fclose(fout); return 1;
+    }
+
+    // array kata unik
+    char **words = NULL;
+    int wcount = 0;
+
+    while(fgets(line, sizeof(line), fin)){
+        // proses baris: ekstrak token kata
+        int len = strlen(line);
+        char buf[MAX_WORD] = "";
+        int bi=0;
+        for(int i=0;i<=len;i++){
+            char c = line[i];
+            if(is_word_char(c)){
+                // huruf jadi lowercase
+                buf[bi++] = (char)tolower((unsigned char)c);
+                if(bi >= MAX_WORD-1){ bi = MAX_WORD-2; }
+            } else {
+                if(bi>0){
+                    buf[bi]=0;
