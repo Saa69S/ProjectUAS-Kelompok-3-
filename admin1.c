@@ -1,3 +1,7 @@
+#include "file.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 //Bagian Menu admin (lihat alat, tambah alat, edit alat, dan hapus alat)
 int cari_alat(struct Tool alat[], int n, unsigned int id) { //int cari_alat(struct Tool alat[], int n, unsigned int id) 
     for (int i = 0; i < n; i++) {
@@ -49,5 +53,4 @@ void menu_(char *user) {                           //Prototype fungsi menu dan t
             save_tools(alat, n);                     //Untuk menyimpan semua data alat yang ada di array alat[] ke dalam file lain agar tetap tersimpan walaupun program ditutup
             printf("Alat berhasil ditambah!\n");
         }
-    }
-}
+
