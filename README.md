@@ -1,4 +1,4 @@
-Anggota Kelompok 3
+Anggota Kelompok 3:
 As-Sajadah Khaira (250810701100005)
 Lukmanul Hakim Karva (250810701100011)
 Abdan Syakura (250810701100017)
