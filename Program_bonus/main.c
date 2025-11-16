@@ -61,3 +61,24 @@ int main(){
                             wcount++;
                         }
                     }
+                     bi=0;
+                }
+                // else ignore char
+            }
+        }
+    }
+
+    // tulis words ke outfile sesuai format: kata=
+    for(int i=0;i<wcount;i++){
+        fprintf(fout, "%s=\n", words[i]);
+    }
+
+    // cleanup
+    for(int i=0;i<wcount;i++) free(words[i]);
+    free(words);
+    fclose(fin);
+    fclose(fout);
+
+    printf("Selesai! File keluaran: %s (cek).\n", OUTFILE);
+    return 0;
+}
