@@ -29,8 +29,8 @@ struct Loan {
 };
 
 /* Function Declaration */
-void hapus_enter(chars);
-int login(char user, char pass, char role);
+void hapus_enter(char *s);
+int login(const char *user, const char *pass, char *role);
 
 int load_tools(struct Tool alat[]);
 void save_tools(struct Tool alat[], int n);
@@ -40,7 +40,7 @@ void save_loans(struct Loan pinjam[], int n);
 
 int cari_alat(struct Tool alat[], int n, unsigned int id);
 
-void menu_admin(charuser);
+void menu_admin(char *user);
 void menu_user(char *user);
 
 #endif
