@@ -1,3 +1,7 @@
+#include "file.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 void menu_user(char *user) {
     struct Tool alat[MAX];
     struct Loan pinjam[MAX];
