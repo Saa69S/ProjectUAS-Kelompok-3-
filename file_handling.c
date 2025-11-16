@@ -1,4 +1,8 @@
 /* Bagian: Fungsi file handling */
+#include "file.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 int load_tools(struct Tool alat[]) {
     FILE *f = fopen("tools.txt", "r");                        // Membuka file "tools.txt" untuk dibaca
     if (!f) return 0;                                         
