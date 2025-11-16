@@ -1,5 +1,12 @@
+#include "file.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-// Bagian: Lanjutan menu admin & awal menu user */
+void menu_admin(char user);  // lanjutan admin1
+
+// Lanjutan menu admin1
+
         else if (pilih == 3) {
             unsigned int id; //unsigned = tidak boleh negatif, maka id pelaggan tidak boleh negatif. 
             printf("Masukkan ID alat yang mau diedit: ");
