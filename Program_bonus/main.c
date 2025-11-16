@@ -1,3 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define INFILE "lirik.txt"
+#define OUTFILE "kosa-kata.txt"
+#define MAX_WORD 200
+#define MAX_LINE 1024
+
+/*cek apakah char boleh dianggap bagian kata: kita izinkan huruf, angka, apostrophe (') dan hyphen (-)*/
+int is_word_char(char c){
+    if(isalpha((unsigned char)c) || isdigit((unsigned char)c)) return 1;
+    if(c=='\'' || c=='-') return 1;
   return 0;
 }
 
