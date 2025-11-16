@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-struct Akun {  /* Struktur untuk data akun */
-    char username[100];
-    char pass[100];
-    char role[10];
-};
+#define MAX 100
+
 struct Tool {  /* Struktur untuk data alat lab */
     unsigned int id;
     char nama[50];
@@ -13,6 +10,11 @@ struct Tool {  /* Struktur untuk data alat lab */
     char model[50];
     unsigned int tahun;
     unsigned int stok;
+};
+struct Akun {  /* Struktur untuk data akun */
+    char username[100];
+    char pass[100];
+    char role[10];
 };
 struct Loan {  /* Struktur untuk alat yg ingin dipinjam */
     char username[50];
@@ -26,18 +28,18 @@ void hapus_enter(char *s) {  /* fungsi untuk menghapus newline */
     }
 }
 int login (char *user, char *pass, char *role) {
-    FILE *file = fopen ("akun.txt", "r");
-    if (!file) {  /* jika file tidak berhasil dibuka*/
+    FILE *f = fopen ("akun.txt", "r");
+    if (!f) {  /* jika file tidak berhasil dibuka*/
         printf("File akun tidak ada\n");
         return 0;
     }
     struct Akun login;  /*mengaliaskan struct Akun menjadi login*/
-    while(fscanf(file, "%s %s %s", login.username, login.pass, login.role) == 3) {  /*mengecek jika username dan pass cocok dengan inputan*/
+    while(fscanf(f, "%s %s %s", login.username, login.pass, login.role) == 3) {  /*mengecek jika username dan pass cocok dengan inputan*/
         if (strcmp(login.username, user) == 0 && strcmp(login.pass, pass) == 0)  /*jika kondisi awal terpenuhi, maka atur ke role*/
             strcpy(role, login.role);  /*menyalin peran dari login*/
-            fclose(file);  /*tutup file*/
+            fclose(f);  /*tutup file*/
             return 1;
     }
-    fclose(file);
+    fclose(f);
     return 0;
 }

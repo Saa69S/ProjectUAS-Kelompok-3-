@@ -1,0 +1,6 @@
+1|Multimeter|Fluke|17B+|2018|5
+2|Oscilloscope|Tektronix|TBS1052B|2016|2
+3|Soldering Iron|Xytron|SX-200|2020|10
+4|Spektrofotometer UV-Vis|Shimadzu|UV-1800|2020|3
+5|Timbangan Analitik|Mettler Toledo|ME204E|2021|2
+6|Labu Erlenmeyer|Iwaki|Erlenmeyer Flask 100 ml|2024|10
